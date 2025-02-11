@@ -1,0 +1,31 @@
+{
+    "name": "Open-R1 Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-python.flake8"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/workspaces/open-r1/openr1/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "python.terminal.activateEnvInCurrentTerminal": true,
+                "python.analysis.typeCheckingMode": "basic",
+                "python.analysis.autoImportCompletions": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": true
+                }
+            }
+        }
+    },
+    "onCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "remoteUser": "vscode"
+} 

@@ -101,6 +101,10 @@ def main(script_args, training_args, model_args):
     # Load datasets
     ################
     dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
+    
+    # For quick testing 
+    for split in dataset:
+        dataset[split] = dataset[split].select(range(min(5, len(dataset[split]))))
 
     ################
     # Load tokenizer
